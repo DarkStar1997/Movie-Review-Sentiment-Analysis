@@ -2,10 +2,8 @@
 #include <iostream>
 #include <random>
 #include <algorithm>
-class Net
+struct Net
 {
-//private:
-public:     //SPOILER ALERT!!!!!!!!!!!!!!!!!!!!!!!!!
 	std::vector<af::array> A;
 	std::vector<af::array> dA;
 	std::vector<af::array> W;
@@ -14,7 +12,6 @@ public:     //SPOILER ALERT!!!!!!!!!!!!!!!!!!!!!!!!!
 	std::vector<int> layout;
 	double alpha = 0.001;
 	int iterations = 1;
-public:
 	Net(std::vector<int> tmp);
 	void setInputMatrix(const std::vector<std::vector<float>> &x);
 	void setInputFile(std::string file);
