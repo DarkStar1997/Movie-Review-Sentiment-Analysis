@@ -1,0 +1,10 @@
+set(cmake_cxx_flags "-std=c++14 -Ofast -march=native -L /opt/arrayfire/lib")
+find_package(ArrayFire)
+macro(add_code name)
+   add_executable(${name} ${name}.cpp)
+   link_directories(/opt/arrayfire/lib)
+   target_link_libraries(${name} ArrayFire::afcuda)
+endmacro()
+
+add_code(train)
+add_code(test)
